@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Todo/Add</title>
+        <meta 
+            name="viewport" 
+            content="width=device-width, initial-scale=1.0" 
+        >
+        <link 
+            rel="stylesheet" 
+            type="text/css" 
+            href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css"
+        >
+        <link href="./common/default-style.css" rel="stylesheet" />
+        <link href="./index.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1>Todo</h1>
+        <div class="input-container">
+            <input type="text" id="todo-title-input">
+            <button type="button" id="add-todo">追加</button>
+        </div>
+
+
+        <ul id="todo-list">
+            <li>
+                <p>title</p>
+                <button type="button" class="done-button"></button>
+                <button type="button" class="delete-button"></button>
+            </li>
+            <li class="done">
+                <p>title</p>
+                <button type="button" class="done-button" disabled></button>
+                <button type="button" class="delete-button"></button>
+            </li>
+        </div>
+        <script src="./common/todo-handler.js"></script>
+        <script src="./index.js"></script>
+    </body>
+</html>
+

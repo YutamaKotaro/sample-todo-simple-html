@@ -1,0 +1,27 @@
+
+.container {
+    border-radius: 8px;
+    border: 1px solid #333;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    row-gap: 10px;
+}
+
+.status-selector  {
+    display: contents;
+}
+
+.action-container {
+    grid-column: 2;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.form-label {
+    padding: 0 12px 0 0;
+}
+
+#delete-button {
+    margin-left: 5px;
+}

@@ -1,0 +1,62 @@
+body {
+    padding: 20px;
+    color: #555;
+}
+
+h1 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+input, textarea {
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 10px;
+    color: #555;
+}
+
+button {
+    color: white;
+    background-color: plum;
+    border: none;
+    font-weight: bold;
+    padding: 10px 16px;
+    border-radius: 8px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"] + label {
+    position: relative;
+    padding: 5px 16px 5px 22px;
+    display: inline-block;
+}
+
+input[type="radio"] + label::before,input[type="radio"] + label::after {
+    content: "";
+    position: absolute;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: none;
+}
+
+input[type="radio"] + label::before {
+    width: 16px;
+    height: 16px;
+}
+input[type="radio"] + label::after {
+
+    width: 12px;
+    height: 12px;
+    left: 2px;
+    background-color: white;
+}
+input[type="radio"]:checked + label::before {
+    background-color: plum;
+}

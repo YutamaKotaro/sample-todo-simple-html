@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Todo/Detail</title>
+        <meta 
+            name="viewport" 
+            content="width=device-width, initial-scale=1.0" 
+        >
+        <link 
+            rel="stylesheet" 
+            type="text/css" 
+            href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css"
+        >
+        <link href="../common/default-style.css" rel="stylesheet" />
+        <link href="./index.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1>Todo Detail</h1>
+        <div class="container">
+            <label for="title" class="form-label">title</label>
+            <input type="text" id="title">
+
+            <fieldset class="status-selector">
+                <legend class="form-label">status</legend>
+                <div>
+                    <input id="status-done" name="status" type="radio" done>
+                    <label for="status-done">done</label>
+                    <input id="status-todo" name="status" type="radio" done>
+                    <label for="status-todo">todo</label>
+                </div>
+            </fieldset>
+
+            <label for="description" class="form-label">descrtiprion</label>
+            <textarea id="description"></textarea>
+
+            <div class="action-container">
+                <button id="update-button">update</button>
+                <button id="delete-button">delete</button>
+            </div>
+        </div>
+        <script src="../common/todo-handler.js"></script>
+        <script src="./index.js"></script>
+    </body>
+</html>
+

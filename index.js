@@ -31,7 +31,7 @@ function createTodoElement(todo) {
     if (alreadyDone) {
         doneButton.setAttribute('disabled', alreadyDone)
     }
-    console.log('addEventLister')
+    
     doneButton.addEventListener('click', (e) => {
         e.stopPropagation()
         const newTodos = updateTodo(todo.id, { status: STATUS.DONE })

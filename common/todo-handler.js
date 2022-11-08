@@ -8,7 +8,6 @@ const STATUS = {
 }
 
 function createTodo(title) {
-    const todos = getTodos()
     const todo = {
         id: `${Date.now()}`,
         title,
@@ -16,11 +15,13 @@ function createTodo(title) {
         status: STATUS.TODO
     }
 
+    const todos = getTodos()
     todos.push(todo)
     saveTodos(todos)
 
     return todos
 }
+
 
 const TODO_KEY = 'todos'
 
@@ -30,30 +31,32 @@ function getTodos() {
     return todos ? JSON.parse(todos) : []
 }
 
+function saveTodos(todos) {
+    localStorage.setItem(TODO_KEY, JSON.stringify(todos))
+}
+
+
 function getTodoById(id) {
     const todos = getTodos()
     const index = todos.findIndex((el) => id === el.id)
 
     return {
-        todos,
         todo: todos[index],
-        index,
+        todos,
+        index
     }
 }
 
-function saveTodos(todos) {
-    localStorage.setItem(TODO_KEY, JSON.stringify(todos))
-}
 
 function updateTodo(id, { status, description, title }) {
     const {
         todos,
-        todo,
         index,
+        todo,
     } = getTodoById(id)
 
-    todos[index].title = title
     todos[index].status = status || todo.status
+    todos[index].title  = title || todo.title
     todos[index].description = description || todo.description
 
     saveTodos(todos)
@@ -61,10 +64,15 @@ function updateTodo(id, { status, description, title }) {
     return todos
 }
 
+
+
+
 function removeTodo(id) {
-    const todos = getTodos()
-    const deltedTodoIndex = todos.findIndex((el) => el.id === id)
-    todos.splice(deltedTodoIndex, 1)
+    const {
+        index,
+        todos,
+    } = getTodoById(id)
+    todos.splice(index, 1)
 
     saveTodos(todos)
 

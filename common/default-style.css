@@ -25,9 +25,12 @@ button {
     border-radius: 8px;
 }
 
+
+
 input[type="radio"] {
     display: none;
 }
+
 
 input[type="radio"] + label {
     position: relative;
@@ -51,12 +54,14 @@ input[type="radio"] + label::before {
     height: 16px;
 }
 input[type="radio"] + label::after {
-
     width: 12px;
     height: 12px;
     left: 2px;
     background-color: white;
 }
+
+
 input[type="radio"]:checked + label::before {
     background-color: plum;
 }
+

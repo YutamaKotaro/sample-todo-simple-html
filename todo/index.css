@@ -6,6 +6,7 @@
     display: grid;
     grid-template-columns: max-content 1fr;
     row-gap: 10px;
+    align-items: center;
 }
 
 .status-selector  {
@@ -25,3 +26,24 @@
 #delete-button {
     margin-left: 5px;
 }
+
+@media all and (max-width: 500px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    .action-container {
+        grid-column: 1;
+        padding-top: 20px;
+    }
+    .form-label {
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    #delete-button {
+        margin-left: 20px;
+    }
+    button {
+        padding: 12px 20px;
+    }
+}
+

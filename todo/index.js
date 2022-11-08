@@ -5,8 +5,9 @@ if (splitedQuery.length !== 2 || !splitedQuery[1]) {
     location.replace('/')
 }
 
-const id = splitedQuery[1]
+const id = decodeURIComponent(splitedQuery[1])
 const { todo } = getTodoById(id)
+
 
 if (!todo) {
     location.replace('/')
@@ -14,10 +15,13 @@ if (!todo) {
 
 renderTodoInfo(todo)
 
+
+
 qs('#update-button').addEventListener('click', () => {
     updateTodoInfo(id)
     location.href = '/'
 })
+
 qs('#delete-button').addEventListener('click', () => {
     removeTodo(id)
     location.replace('/')
@@ -34,11 +38,12 @@ function renderTodoInfo(todo) {
     else qs('#status-todo').checked = true
 }
 
+
 function updateTodoInfo(id) {
     const title = qs('#title').value
     const description = qs('#description').value
     const status = qs('#status-done').checked ? STATUS.DONE : STATUS.TODO
-    console.log({title, description, status})
+
     updateTodo(id, {
         title,
         description,

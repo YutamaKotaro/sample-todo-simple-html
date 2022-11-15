@@ -5,7 +5,7 @@ renderTodos(todos)
 qs('#add-todo').addEventListener('click', () => {
     const title = qs('#todo-title-input').value
 
-    if (!title) return
+    if (!title) return 
 
     const todos = createTodo(title)
     renderTodos(todos)
@@ -13,6 +13,14 @@ qs('#add-todo').addEventListener('click', () => {
     qs('#todo-title-input').value = ''
 })
 
+function renderTodos(todos) {
+    const list = qs('#todo-list')
+    list.innerText = ''
+
+    for (const todo of todos) {
+        list.appendChild(createTodoElement(todo))
+    }
+}
 
 function createTodoElement(todo) {
     const alreadyDone = todo.status === STATUS.DONE
@@ -22,16 +30,16 @@ function createTodoElement(todo) {
     li.addEventListener('click', () => {
         location.href = `/todo/?id=${encodeURIComponent(todo.id)}`
     })
-    
+
     const p = document.createElement('p')
     p.innerText = todo.title
 
     const doneButton = document.createElement('button')
     doneButton.setAttribute('class', 'done-button')
+    doneButton.setAttribute('type', 'button')
     if (alreadyDone) {
         doneButton.setAttribute('disabled', alreadyDone)
     }
-    
     doneButton.addEventListener('click', (e) => {
         e.stopPropagation()
         const newTodos = updateTodo(todo.id, { status: STATUS.DONE })
@@ -40,6 +48,7 @@ function createTodoElement(todo) {
 
     const deleteButton = document.createElement('button')
     deleteButton.setAttribute('class', 'delete-button')
+    deleteButton.setAttribute('type', 'button')
     deleteButton.addEventListener('click', (e) => {
         e.stopPropagation()
         const newTodos = removeTodo(todo.id)
@@ -51,13 +60,4 @@ function createTodoElement(todo) {
     li.appendChild(deleteButton)
 
     return li
-}
-
-function renderTodos(todos) {
-    const list = qs('#todo-list')
-    list.innerHTML = ''
-
-    for (const todo of todos) {
-        list.appendChild(createTodoElement(todo))
-    }
 }

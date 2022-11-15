@@ -11,8 +11,8 @@
             type="text/css" 
             href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css"
         >
-        <link href="../common/default-style.css" rel="stylesheet" />
-        <link href="./index.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../common/default-style.css">
+        <link rel="stylesheet" href="./index.css">
     </head>
     <body>
         <h1>Todo Detail</h1>
@@ -23,26 +23,24 @@
             <fieldset class="status-selector">
                 <legend class="form-label">status</legend>
                 <div>
-
                     <input id="status-done" name="status" type="radio">
                     <label for="status-done">done</label>
-
 
                     <input id="status-todo" name="status" type="radio">
                     <label for="status-todo">todo</label>
                 </div>
             </fieldset>
 
-            <label for="description" class="form-label">descrtiprion</label>
+            <label for="description" class="form-label">description</label>
             <textarea id="description"></textarea>
 
             <div class="action-container">
-                <button id="update-button">update</button>
-                <button id="delete-button">delete</button>
+                <button id="update-button" type="button">update</button>
+                <button id="delete-button" type="button">delete</button>
             </div>
+
         </div>
         <script src="../common/todo-handler.js"></script>
         <script src="./index.js"></script>
     </body>
 </html>
-

@@ -14,8 +14,6 @@
     margin: 0 10px;
 }
 
-
-
 #todo-list {
     padding: 20px 0;
 }
@@ -49,25 +47,23 @@
     cursor: pointer;
 }
 
-#todo-list button::after {
+#todo-list button:after {
     content: "";
     display: block;
     height: 3px;
     background-color: white;
     transform: rotate(45deg);
     position: absolute;
-    width: 20px;
 }
-#todo-list button::before {
+
+#todo-list button:before {
     content: "";
     display: block;
     height: 3px;
     background-color: white;
     transform: rotate(-45deg);
     position: absolute;
-    width: 20px;
 }
-
 
 #todo-list button.done-button {
     background-color: darkseagreen;
@@ -78,34 +74,29 @@
     cursor: not-allowed;
 }
 
-
-
-#todo-list button.done-button::after {
+#todo-list button.done-button:after {
     width: 10px;
     right: 16px;
     top: 16px;
 }
-#todo-list button.done-button::before {
+#todo-list button.done-button:before {
     width: 16px;
     right: 4px;
     top: 12px;
 }
 
-
-
-
 #todo-list button.delete-button {
-    background-color:indianred;
+    background-color: indianred;
 }
 
-#todo-list button.delete-button::after {
-    width: 20px;
-    top: 14px;
-    left: 6px;
-}
-#todo-list button.delete-button::before {
+#todo-list button.delete-button:after {
     width: 20px;
     top: 14px;
     left: 6px;
 }
 
+#todo-list button.delete-button:before {
+    width: 20px;
+    top: 14px;
+    left: 6px;
+}

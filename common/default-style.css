@@ -1,4 +1,4 @@
-body {
+body, legend {
     padding: 20px;
     color: #555;
 }
@@ -25,12 +25,9 @@ button {
     border-radius: 8px;
 }
 
-
-
 input[type="radio"] {
     display: none;
 }
-
 
 input[type="radio"] + label {
     position: relative;
@@ -38,7 +35,7 @@ input[type="radio"] + label {
     display: inline-block;
 }
 
-input[type="radio"] + label::before,input[type="radio"] + label::after {
+input[type="radio"] + label::before, input[type="radio"] + label::after {
     content: "";
     position: absolute;
     border: 1px solid #ccc;
@@ -53,15 +50,15 @@ input[type="radio"] + label::before {
     width: 16px;
     height: 16px;
 }
+
+input[type="radio"]:checked + label::before {
+    background-color: plum;
+}
+
 input[type="radio"] + label::after {
     width: 12px;
     height: 12px;
     left: 2px;
     background-color: white;
-}
-
-
-input[type="radio"]:checked + label::before {
-    background-color: plum;
 }
 

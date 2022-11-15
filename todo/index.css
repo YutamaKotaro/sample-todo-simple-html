@@ -1,4 +1,3 @@
-
 .container {
     border-radius: 8px;
     border: 1px solid #333;
@@ -6,10 +5,10 @@
     display: grid;
     grid-template-columns: max-content 1fr;
     row-gap: 10px;
-    align-items: center;
+    align-items: center;    
 }
 
-.status-selector  {
+.status-selector {
     display: contents;
 }
 
@@ -46,4 +45,11 @@
         padding: 12px 20px;
     }
 }
+
+
+
+
+
+
+
 
